@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal News</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Poppins", serif;
+      }
+
+      .header {
+        display: flex;
+        height: 30px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 10px;
+        border-bottom: 1px solid rgb(203, 191, 191);
+      }
+
+      .logo {
+        font-weight: 720;
+        text-align: left;
+      }
+
+      .logo-link {
+        color: rgb(0, 255, 128);
+        font-size: 20px;
+      }
+
+      .link2 {
+        color: black;
+        font-size: 20px;
+      }
+
+      .nav {
+        align-items: center;
+        justify-content: flex-start;
+        display: flex;
+        flex-grow: 1;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin-left: 10px;
+      }
+
+      nav ul li a {
+        color: black;
+        display: block;
+        margin: 0 8px;
+        font-weight: 500;
+        padding: 6px 6.8px;
+      }
+
+      .breakingNews {
+        display: block;
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 100%;
+        align-items: center;
+      }
+
+      .title {
+        background: rgb(0, 255, 106);
+        display: flex;
+        width: 100%;
+        height: 50px;
+        align-items: center;
+      }
+
+      .title-text {
+        color: white;
+        margin-left: 10px;
+      }
+
+      .bNewsContnr {
+        display: flex;
+        align-items: center;
+        padding: 6px 15px;
+        border: 1px solid rgb(189, 184, 184);
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .bNews1 {
+        display: flex;
+        align-items: center;
+        width: 68%;
+      }
+
+      .img-bn {
+        width: 20%;
+        margin-right: 20px;
+      }
+
+      .bNews2 h4,
+      .bNews2 .time {
+        display: inline;
+      }
+
+      .bNews2 {
+        padding: 10px 20px;
+        width: 32%;
+        border-left: 1px solid rgb(189, 184, 184);
+      }
+
+      .time1 {
+        margin-left: 10px;
+        color: orange;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .time2 {
+        margin-left: 10px;
+        color: orange;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .contnrConten {
+        height: 530px;
+        width: 100%;
+        display: flex;
+        margin-left: 10px;
+      }
+
+      .contenRight {
+        width: 15%;
+        border-top: 3px solid black;
+        margin-right: 10px;
+      }
+
+      .titleCR {
+        padding: 10px 5px 5px 5px;
+      }
+
+      .crTitle {
+        font-weight: 700;
+      }
+
+      .cr1 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr2 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr3 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr4 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr5 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr6 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .midContenCntr {
+        display: block;
+        width: 65%;
+        border-left: 1px solid rgb(189, 184, 184);
+      }
+
+      .midContenTop {
+        display: flex;
+        padding-bottom: 10px;
+        margin-left: 10px;
+        flex-direction: flex-start;
+        gap: 15px;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .contenTop {
+        width: 30%;
+        height: auto;
+        margin-left: 10px;
+      }
+
+      .textContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 70%;
+      }
+
+      .titleCT {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .listCT {
+        display: block;
+        margin-top: 10px;
+      }
+
+      .listCT ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        padding: 0;
+      }
+
+      .listCT li {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .mostPopular {
+        margin-left: 10px;
+        width: 17%;
+      }
+
+      .mostPopularImg {
+        width: 215px;
+        height: auto;
+        margin-top: 1px;
+        margin-bottom: 10px;
+      }
+
+      .mostPopular .titleCR {
+        padding: 10px 5px 5px 5px;
+        border-top: 3px solid black;
+      }
+
+      .mostPopular .crTitle {
+        font-weight: 700;
+      }
+
+      .mostPopular .cr1,
+      .mostPopular .cr2,
+      .mostPopular .cr3,
+      .mostPopular .cr4,
+      .mostPopular .cr5,
+      .mostPopular .cr6 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .midContenBot {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .item {
+        flex: 0 1 calc(33.333% - 20px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+      }
+
+      .midBotcntn {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+      }
+
+      .titleItem {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+
+      .itemlis {
+        margin-left: 10px;
+        font-size: 12px;
+        margin-top: 10px;
+        text-align: justify;
+        color: #535252;
+      }
+
+      .footer {
+        display: block;
+        margin-bottom: 10px;
+        height: 150px;
+        width: 80%;
+        float: left;
+        top: 50%;
+        border-top: 3px solid black;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .topPicks {
+        display: flex;
+        margin-left: 10px;
+        padding: 10px;
+      }
+
+      .topiks {
+        margin-left: 10px;
+        font-weight: 600;
+      }
+
+      .itemTopik {
+        /* display: block; */
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .topikcontn {
+        width: 75%;
+        height: auto;
+        padding: 2px;
+      }
+
+      .title-item {
+        /* margin-right: 50px;
+        padding: 10px; */
+        font-size: 13px;
+        font-weight: 600;
+        color: #000;
+        text-align:justify;
+      }
+      .titleItem {
+        margin-right: 50px;
+        padding: 10px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #000;
+        text-align:justify;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <a href="" class="logo-link">Healty</a>
+        <a href="" class="logo-link link2">Indonesia</a>
+      </div>
+      <div class="nav">
+        <nav>
+          <ul class="hdList">
+            <li><a href="">LOCAL</a></li>
+            <li><a href="">NEWS</a></li>
+            <li><a href="">SPORTS</a></li>
+            <li><a href="">REAL ESTATE</a></li>
+            <li><a href="">BUSINESS</a></li>
+            <li><a href="">A&E</a></li>
+            <li><a href="">EAT+DRINK</a></li>
+            <li><a href="">LIVING</a></li>
+            <li><a href="">TRAVEL</a></li>
+            <li><a href="">OBITS</a></li>
+            <li><a href="">CARS</a></li>
+            <li><a href="">JOBS</a></li>
+            <li><a href="">CLASSIFIEDS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="breakingNews">
+      <div class="title">
+        <h3 class="title-text">BREAKING NEWS</h3>
+      </div>
+      <div class="bNewsContnr">
+        <div class="bNews1">
+          <img src="BREAKFAST.jpg" alt="" class="img-bn" />
+          <h3>Makan Makanan Bergizi Seimbang</h3>
+          <span class="time1">9.40 PM</span>
+        </div>
+        <div class="bNews2">
+          <h4>RS Harapan Kita Sukses Oprasi Jantung Robotik Pertama di Indonesia</h4>
+          <span class="time2">6.53  PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contnrConten">
+      <div class="contenRight">
+        <div class="titleCR">
+          <span class="crTitle">LATEST NEWS</span>
+          <p class="cr1">
+            Kata Dokter Kipas Angin dan Mandi Malam Tidak Sebabkan Pneumonia
+          </p>
+          <p class="cr2">
+           Apakah Infeksi Karena Gigitan Tikus Bisa Diobati?
+          </p>
+          <p class="cr3">
+            Di Musim Mangga Ketahuilah Kandungan Buah Tropis Ini
+          </p>
+          <p class="cr4">
+            MKEK IDI Kajian Ulang Kode Etik Kedokteran dan Sumpah Dokkter
+          </p>
+          <p class="cr5">
+            Peran penting Bidan Mencegah Anemia Ibu Hamil
+          </p>
+    
+        </div>
+      </div>
+
+      <div class="midContenCntr">
+        <div class="midContenTop">
+          <img src="buah.jpg" alt="Content Image" class="contenTop" />
+          <div class="textContainer">
+            <span class="titleCT"> 8 Buah yang Bantu Menurunkan Risiko Diabetes
+               </span>
+            <div class="listCT">
+              <ul>
+                <li>Apel. Buah apel telah dipercaya sejak lama dapat mencegah berbagai penyakit.</li>
+                <li>Jeruk. Jeruk merupakan sumber vitamin C yang sangat baik</li>
+                <li>Pir. Selain rendah karbohidrat, pir adalah buah yang tinggi serat</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="midContenBot">
+          <div class="item">
+            <img src="orga.jpg" alt="" class="midBotcntn" />
+            <div class="title-item">
+                Sedang Menjadi Tren, Apakah Lari Setiap Hari Aman bagi Tubuh?
+            </div>
+            <div class="itemlis">
+              <ul>
+                <li>
+                  Lari adalah salah satu jenis olahraga yang sedang menjadi tren di Indonesia.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <img src="makan.jpg" alt="" class="midBotcntn" />
+            <div class="title-item">
+              4 pilar gizi seimbang
+
+            </div>
+            <div class="itemlis">
+              <ul>
+                <li>
+                  Di Indonesia, masih banyak anak-anak yang mengalami masalah gizi, seperti gizi kurang, gizi buruk, dan stunting
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <img src="baby.jpg" alt="" class="midBotcntn" />
+            <div class="title-item">
+              Pilu Bayi Natarlia Idap Tulang Rapuh, Tak Bisa Dipeluk Erat Ortu
+            </div>
+            <div class="itemlis">
+              <ul>
+                <li>
+                  Bayi berusia dua tahun Bernama Natarlia Nappi mengidap kondisi langka, yakni tulang rapuh
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mostPopular">
+        <img src="baby2.jpg" alt="Most Popular Image" class="mostPopularImg"/>
+        <div class="titleCR">
+          <span class="crTitle">MOST POPULAR</span>
+          <p class="cr1">
+            Bayi berusia dua tahun Bernama Natarlia Nappi mengidap kondisi langka, yakni tulang rapuh
+          </p>
+          <p class="cr2">
+            Kasus Langka Bayi Idap Kanker, Apa Kemungkinan Penyebabnya?
+          </p>
+          <p class="cr3">
+            Senyum Katarina, Bayinya Bernama Gibran Terlahir Sehat di Tengah Ancaman Lewotobi
+          </p>
+          <p class="cr4">
+            Kisah Distrik Tarabu, Dihuni Lansia, Kini Timang Bayi Pertama dalam Setengah Abad
+          </p>
+          <p class="cr5">
+            Kisah Bayi di Pengungsian Erupsi Lewotobi Diberi Nama Gibran
+          </p>
+          <p class="cr5">
+            Ada Mayat Bayi dalam Kantong Plastik di TPA Kampung Waibron, Jayapura
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="topiks">TODAY'S TOP PICKS</span>
+      <div class="topPicks">
+        <div class="itemTopik">
+          <img src="child.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            Unik! Inovasi VR Stanford Kurangi Ketakutan Anak Disuntik Saat Imunisasi
+          </div>
+        </div>
+        <div class="itemTopik">
+          <img src="strawberi.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            Meski Rasanya Asam, Ada 6 Manfaat Strawberry Bagi Kesehatan
+          </div>
+        </div>
+        <div class="itemTopik">
+          <img src="daging.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            Harga Daging Sapi di Kota Jayapura Papua Masih Normal, Rp 140 Ribu Per Kilogram
+          </div>
+        </div>
+        <div class="itemTopik">
+          <img src="baby3.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            Kisah Distrik Tarabu, Dihuni Lansia, Kini Timang Bayi Pertama dalam Setengah Abad
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
